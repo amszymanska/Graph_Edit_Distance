@@ -274,7 +274,6 @@ int main(int argc, char *argv[]) {
 
 		for (ui i = 0; i < db_size; i++) {
 			for (ui j = i+1; j < db_size; j++) {
-				printf("%d %d\n", i, j);
 				Application *app = new Application(verify_upper_bound, lower_bound.c_str());
 				app->init(db[i], db[j]);
 				int res = INF;
@@ -328,7 +327,6 @@ int main(int argc, char *argv[]) {
 #ifndef NDEBUG
 				assert(res == app->compute_ged_of_BX());
 #endif
-				printf("Pair (%d, %d): %d\n", i+1, j+1, res);
 
 				if (print_ged) {
 					if (j) printf(" ");
